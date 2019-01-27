@@ -1,0 +1,85 @@
+<div class="container">
+
+    <section class="content-section grid">
+      <div class="gc-s12">
+        <h1 class="page-title">Investigate</h1>
+      </div>
+    
+      <div class="gc-s4 bt">
+        <div class="content-category-container">
+          <a href="/library">
+            <div class="browse-link">Browse</div>
+            <h2>Library</h2>
+          </a>
+          <% blog('library').articles[0...1].each do |article| %>
+            <% link_to article, :class => 'article-unit' do %>
+              <div class="article-cover-image" style="background-image: url(/assets/images/<%= article.data.cover_image %>)"></div>
+              <p class="article-title"><%= article.title %></p>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      
+      <div class="gc-s4 bt">
+        <div class="content-category-container">
+          <a href="/journals">
+            <div class="browse-link">Browse</div>
+            <h2>Journals</h2>
+          </a>
+          <% blog('journal').articles[0...1].each do |article| %>
+            <% link_to article, :class => 'article-unit' do %>
+              <div class="article-cover-image" style="background-image: url(/assets/images/<%= article.data.cover_image %>)"></div>
+              <p class="article-title"><%= article.title %></p>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      
+      <div class="gc-s4 bt">
+        <div class="content-category-container">
+          <a href="/events">
+            <div class="browse-link">Browse</div>
+            <h2>Events</h2>
+          </a>
+          <% blog('events').articles[0...1].each do |article| %>
+            <% link_to article, :class => 'article-unit' do %>
+              <div class="article-cover-image" style="background-image: url(/assets/images/<%= article.data.cover_image %>)"></div>
+              <p class="article-title"><%= article.title %></p>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </section>
+
+
+  <section class="content-section grid">
+    <div class="gc-s12">
+      <h1>Explore the Library</h1>
+    </div>
+    <div class="gc-s12">
+      <div class="grid bt pt-md">
+        <div class="gc-s6">
+          <a href="/library" class="primary-cta">Browse Our Collections</a>
+        </div>
+        <div class="gc-s6">
+          <input class="input-large" type="text" name="search" id="search" placeholder="Search by keyword, title, or author">
+        </div>
+      </div>
+    </div>
+  
+    <div class="gc-s12">
+      <div class="pt-lg section-header">
+        <h3>Featured Collections</h3>
+      </div>
+      <div class="grid pt-sm">
+        <div class="gc-s4"><a href="#" class="secondary-cta">Gilles Deleuze</a></div>
+        <div class="gc-s4"><a href="#" class="secondary-cta">Public Architecture</a></div>
+        <div class="gc-s4"><a href="#" class="secondary-cta">Guerilla Publishing</a></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<section class="right">
+  <%= partial "panels/participate" %>
+</section>

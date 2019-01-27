@@ -1,0 +1,5 @@
+<% blog('events').articles.each do |article| %>
+  <% link_to article, :class => 'article-unit' do %>
+    <p class="article-title"><%= article.title %></p>
+  <% end %>
+<% end %>
